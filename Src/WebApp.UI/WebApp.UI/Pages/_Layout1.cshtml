@@ -15,12 +15,10 @@
        @using (Html.BeginForm(FormMethod.Post, new { autocomplete = "off", enctype = "multipart/form-data" }))
         {
             Html.AntiForgeryToken();
-            @RenderBody()
-
-            <input type="hidden" id="RequestPath1" value="@Context.Request.PathBase" />
-            <a id="scrollToTopBtn" class="ScollToTopbutton" title="Scoll to Top"></a>
+            @RenderBody();            
         }
    </div>
+
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
