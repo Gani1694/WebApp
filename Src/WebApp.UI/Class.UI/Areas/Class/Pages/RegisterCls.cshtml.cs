@@ -19,7 +19,7 @@ namespace Class.UI.Areas.Class.Pages
 
             if (!ModelState.IsValid)
             {
-                return BadRequest();
+                return Page();
             }
 
             var model=ClassModel;

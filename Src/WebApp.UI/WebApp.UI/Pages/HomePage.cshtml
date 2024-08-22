@@ -35,6 +35,16 @@
     <!-- Template Main CSS File -->
     <link href="~/assets/css/style.css" rel="stylesheet">
     <link href="~/css/site.css" rel="stylesheet" />
+    <style>
+        .framecard {
+            position: relative;
+            top: 0;
+            left: 0;
+            min-height: 100vh;
+            min-width: 100%;
+            display: block; /* iframes are inline by default */
+        }
+    </style>
 </head>
 
 <body>
@@ -446,10 +456,10 @@
     </aside><!-- End Sidebar-->
 
     <main id="main" class="main">
-        <div class="cont">
-            <iframe src="WebApp.UI/BodyPage" class="responsive-iframe" name="BodyPage" id="BodyPage" title="BodyPage">
+        <iframe src="WebApp.UI/BodyPage" frameborder="0" class="framecard"
+        allowfullscreen name="BodyPage" id="BodyPage" scrolling="no"
+                title="BodyPage">
             </iframe>
-        </div>
 
     </main><!-- End #main -->
 
