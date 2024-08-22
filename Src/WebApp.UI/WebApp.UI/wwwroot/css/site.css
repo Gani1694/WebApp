@@ -26,3 +26,6 @@ body {
 .control-label{
     padding-bottom:5px !important;
 }
+.card {
+    padding: 20px 15px !important;
+}

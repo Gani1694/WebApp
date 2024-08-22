@@ -7,10 +7,23 @@ namespace Class.UI.Areas.Class.Pages
     public class RegisterClsModel : PageModel
     {
         [BindProperty]
-        public ClassModel ClassModel { get; set; }
-        public async Task OnGetAsync()
+        public ClassModel? ClassModel { get; set; }
+        public async Task OnGetAsync(int? Classid)
         {
-            ClassModel=new ClassModel();
+            List<ClassModel> classes = new List<ClassModel>()
+            {
+                new ClassModel(){ClassId = 1,ClassName="LKG",CreatedBy="Anil",CreatedOn=DateTime.Now},
+                new ClassModel(){ClassId = 2,ClassName="UKG",CreatedBy="Anil kumar",CreatedOn=DateTime.Now},
+                new ClassModel(){ClassId = 2,ClassName="HKG",CreatedBy="Anil kumar",CreatedOn=DateTime.Now}
+            };
+            if (Classid == null)
+            {
+                ClassModel = new ClassModel();
+            }
+            else
+            {
+                ClassModel = classes.FirstOrDefault(id => id.ClassId == Classid);
+            }
 
             await Task.Delay(10);
         }
@@ -23,6 +36,8 @@ namespace Class.UI.Areas.Class.Pages
             }
 
             var model=ClassModel;
+
+            await Task.Delay(10);
 
             return Page();
         }
