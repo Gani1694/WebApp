@@ -3,34 +3,35 @@
 @{
     Layout = "../_Layout1";
 }
-
 <h3>Register Class</h3>
-<div class="row">
-    <div class="col-sm-6">
-        <div class="form-group">
-            <label asp-for="@Model.ClassModel.ClassName" class="control-label"></label>
-            <input asp-for="@Model.ClassModel.ClassName" class="form-control" />
-            <span class="text-danger" asp-validation-for="@Model.ClassModel.ClassName"></span>
+<div class="card" style="padding:20px 15px;">
+   <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label asp-for="@Model.ClassModel.ClassName" class="control-label"></label>
+                <input asp-for="@Model.ClassModel.ClassName" class="form-control" />
+                <span class="text-danger" asp-validation-for="@Model.ClassModel.ClassName"></span>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label asp-for="@Model.ClassModel.CreatedBy" class="control-label"></label>
+                <input asp-for="@Model.ClassModel.CreatedBy" class="form-control" />
+                <span class="text-danger" asp-validation-for="@Model.ClassModel.CreatedBy"></span>
+            </div>
         </div>
     </div>
-    <div class="col-sm-6">
-        <div class="form-group">
-            <label asp-for="@Model.ClassModel.CreatedBy" class="control-label"></label>
-            <input asp-for="@Model.ClassModel.CreatedBy" class="form-control" />
-            <span class="text-danger" asp-validation-for="@Model.ClassModel.CreatedBy"></span>
+    <br />
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label asp-for="@Model.ClassModel.CreatedOn" class="control-label"></label>
+                <input asp-for="@Model.ClassModel.CreatedOn" type="date" class="form-control" />
+                <span class="text-danger" asp-validation-for="@Model.ClassModel.CreatedOn"></span>
+            </div>
         </div>
+    </div><br /><br />
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <button class="btn btn-primary me-md-2" type="submit">Submit</button>
     </div>
-</div>
-<br />
-<div class="row">
-    <div class="col-sm-6">
-        <div class="form-group">
-            <label asp-for="@Model.ClassModel.CreatedOn" class="control-label"></label>
-            <input asp-for="@Model.ClassModel.CreatedOn" type="date" class="form-control" />
-            <span class="text-danger" asp-validation-for="@Model.ClassModel.CreatedOn"></span>
-        </div>
-    </div>
-</div>
-<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <button class="btn btn-primary me-md-2" type="submit">Submit</button>
 </div>
