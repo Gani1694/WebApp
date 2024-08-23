@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/WebApp.UI.styles.css" asp-append-version="true" />
-
     <link href="https://cdn.datatables.net/2.1.4/css/dataTables.bootstrap5.css" rel="stylesheet">
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <style>
+        
+    </style>
 </head>
-<body style="overflow-y:hidden;">
+<body>
     <div id="scroll">
-        <div style="padding:10px 10px;">
+        <div style="padding:10px 10px;overflow-y:hidden;">
             @using (Html.BeginForm(FormMethod.Post, new { autocomplete = "off", enctype = "multipart/form-data" }))
             {
                 @RenderBody();                
@@ -27,18 +29,7 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js" asp-append-version="true"></script>
     <script type="text/javascript">
-        new DataTable('#example');
-        $(window).on("load", function () {
-            var windowHeight = $(window).height();
-            $('#scroll').height(windowHeight)
-        });
-       $(document).ready(function(){
-            $("#dt-length-0").change(function () {
-                alert("hello")
-                alert($('#scroll').height());
-                $('#scroll').css('min-height', $('#scroll').height() + 'vh');
-            });
-       })
+        new DataTable('#table');
     </script>
 </body>
 </html>

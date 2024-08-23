@@ -34,22 +34,13 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <!-- Template Main CSS File -->
     <link href="~/assets/css/style.css" rel="stylesheet">
-    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
     <style>
-        .framecard {
-            position: relative;
-            top: 0;
-            left: 0;
-            min-height: 1000%;
-            min-width: 100%;
-            display: block; /* iframes are inline by default */
-            overflow-x: hidden;
-            overflow-y: scroll;
-        }
+       
     </style>
 </head>
 
-<body>
+<body style="overflow:hidden">
 
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
@@ -296,7 +287,7 @@
                     <i class="bi bi-menu-button-wide"></i><span>Registerations</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    
+
                     <li>
                         <a target="BodyPage" href="WebApp.UI/Class/RegisterCls">
                             <i class="bi bi-circle"></i><span> Register Class</span>
@@ -458,36 +449,19 @@
     </aside><!-- End Sidebar-->
 
     <main id="main" class="main">
-        <iframe src="WebApp.UI/BodyPage" frameborder="0" class="framecard"
-        allowfullscreen name="BodyPage" id="BodyPage"
-                title="BodyPage">
-            </iframe>         
-
+        <iframe src="WebApp.UI/BodyPage" name="BodyPage" id="BodyPage" title="BodyPage"></iframe>
     </main><!-- End #main -->
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
     <!-- Vendor JS Files -->
     <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-   
+
     <script src="~/assets/vendor/quill/quill.js"></script>
     <script src="~/assets/vendor/tinymce/tinymce.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js" asp-append-version="true"></script>
 
     <!-- Template Main JS File -->
     <script src="~/assets/js/main.js"></script>
-    <script>
-        $("a[avthref]").click(function (index) {
-            var AvtHref = $(this).attr("avthref");           
-            window.frames["BodyPage"].location = "WebApp.UI" + AvtHref;
-        });        
-        $(window).on("load", function () {
-            var windowHeight = $(window).height();
-            alert(windowHeight);
-            alert($('#BodyPage').height());
-            $('#BodyPage').height(windowHeight)
-        });
-    </script>
-
 </body>
 
 </html>
