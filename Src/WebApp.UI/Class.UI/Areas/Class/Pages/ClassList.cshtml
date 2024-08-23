@@ -1,0 +1,30 @@
+﻿@page
+@model Class.UI.Areas.Class.Pages.ClassListModel
+@{
+    Layout = "../_LayoutList";
+}
+<div class="page-title">
+    Class List
+</div>
+<div class="card">
+    <table id="table" class="table datatable" style="width:100%">
+        <thead>
+            <tr>
+                <th>
+                    Class Name
+                </th>
+                <th>Created By</th>
+                <th data-type="date" data-format="YYYY/DD/MM">Created On</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.classes){
+                <tr>
+                    <td>@item.ClassName</td>
+                    <td>@item.CreatedBy</td>
+                    <td>@item.CreatedOn</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
